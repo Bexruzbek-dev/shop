@@ -13,6 +13,12 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        onTap: () {
+          context.read<ProductCubit>().removeProduct(product.id);
+        },
+        onLongPress: () {
+          context.read<ProductCubit>().updateProduct(product);
+        },
         leading: Image.network(product.imageUrl),
         title: Text(product.title),
         trailing: Row(

@@ -10,6 +10,7 @@ class ProductPage extends StatelessWidget {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
         return ListView.builder(
+        
           itemCount: state.products.length,
           itemBuilder: (context, index) {
             final product = state.products[index];
